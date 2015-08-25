@@ -1,0 +1,7 @@
+add enemy (drone)
+add capsule collider to enemy
+add nav mesh
+add nav mesh agent
+animation event on enemy?
+shootable layer?
+VIDEO 4 - Adding Enemy 1

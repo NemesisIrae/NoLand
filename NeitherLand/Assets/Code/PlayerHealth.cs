@@ -4,13 +4,13 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int startingHealt = 100;
-    public int currentHealth;
-    public Slider healthSlider;
-    public Image damageImage;
-    public AudioClip deathClip;
-    public float flashSpeed = 5f;
-    public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+    public int 			startingHealt = 100;
+    public int 			currentHealth;
+    public Slider 		healthSlider;
+    public Image 		damageImage;
+    public AudioClip	deathClip;
+    public float 		flashSpeed = 5f;
+    public Color 		flashColor = new Color(1f, 0f, 0f, 0.1f);
 
     AudioSource playerAudio;
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController firstPersonController;
