@@ -46,7 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\EnemyAttack.cs" />
+     <Compile Include="Assets\Code\EnemyHealth.cs" />
+     <Compile Include="Assets\Code\EnemyMovement.cs" />
      <Compile Include="Assets\Code\PlayerHealth.cs" />
+     <Compile Include="Assets\Code\PlayerShooting.cs" />
      <Compile Include="Assets\Rotate.cs" />
      <None Include="Assets\Models\Characters\amanda\shaders\gunsShader.shader" />
      <None Include="Assets\Models\Characters\amanda\shaders\AmandaShader.shader" />
