@@ -48,10 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Code\EnemyAttack.cs" />
      <Compile Include="Assets\Code\EnemyHealth.cs" />
+     <Compile Include="Assets\Code\EnemyManager.cs" />
      <Compile Include="Assets\Code\EnemyMovement.cs" />
      <Compile Include="Assets\Code\PlayerHealth.cs" />
      <Compile Include="Assets\Code\PlayerShooting.cs" />
-     <Compile Include="Assets\Rotate.cs" />
+     <Compile Include="Assets\Code\Rotate.cs" />
+     <Compile Include="Assets\Code\SpyderAttack.cs" />
+     <Compile Include="Assets\Code\SpyderHealth.cs" />
+     <Compile Include="Assets\Code\SpyderMovement.cs" />
      <None Include="Assets\Models\Characters\amanda\shaders\gunsShader.shader" />
      <None Include="Assets\Models\Characters\amanda\shaders\AmandaShader.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />

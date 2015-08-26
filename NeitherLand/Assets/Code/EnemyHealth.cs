@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class EnemyHealth : MonoBehaviour {
-	public int    	 	startingHealt = 100;	// The amount of health the enemy starts the game with.
+	public int    	 	startingHealth = 100;	// The amount of health the enemy starts the game with.
 	public int 		 	currentHealth;          // The current health the enemy has.
     public float 	 	sinkSpeed = 2.5f;       // The speed at which the enemy sinks through the floor when dead.
     public int 		 	scoreValue = 10;        // The amount added to the player's score when the enemy dies.
@@ -51,13 +51,7 @@ public class EnemyHealth : MonoBehaviour {
         // Reduce the current health by the amount of damage sustained.
         currentHealth -= amount;
             
-        // Set the position of the particle system to where the hit was sustained.
-        // hitParticles.transform.position = hitPoint;
 
-        // And play the particles.
-        // hitParticles.Play();
-
-        // If the current health is less than or equal to zero...
         if(currentHealth <= 0)
         {
             // ... the enemy is dead.
@@ -93,7 +87,7 @@ public class EnemyHealth : MonoBehaviour {
         isSinking = true;
 
         // Increase the score by the enemy's score value.
-        ScoreManager.score += scoreValue;
+      //  ScoreManager.score += scoreValue; ??
 
         // After 2 seconds destory the enemy.
         Destroy (gameObject, 2f);

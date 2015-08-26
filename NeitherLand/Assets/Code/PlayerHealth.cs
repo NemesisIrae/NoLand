@@ -4,13 +4,15 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int 			startingHealt = 100;
-    public int 			currentHealth;
-    public Slider 		healthSlider;
-    public Image 		damageImage;
-    public AudioClip	deathClip;
-    public float 		flashSpeed = 5f;
-    public Color 		flashColor = new Color(1f, 0f, 0f, 0.1f);
+    public int startingHealt = 100;
+    public int currentHealth;
+    public Slider healthSlider;
+    public Image damageImage;
+    public AudioClip deathClip;
+    public float flashSpeed = 5f;
+    public Animator gameOverAnimator;
+    public Color flashColor = new Color(1f, 0f, 0f, 0.8f);
+    public Color deathColor = new Color(0f, 0f, 0f, 1.0f);
 
     AudioSource playerAudio;
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController firstPersonController;
@@ -31,7 +33,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
     {
         if (damaged)
         {
@@ -42,9 +44,14 @@ public class PlayerHealth : MonoBehaviour {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
+
+        if(isDead)
+        {
+            gameOverAnimator.SetBool("GameOver", true);
+        }
 	}
 
-    public void TakeDamaged(int amount)
+    public void TakeDamage(int amount)
     {
         damaged = true;
         currentHealth -= amount;
@@ -58,6 +65,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Death()
     {
+        isDead = true;
         playerAudio.clip = deathClip;
         playerAudio.Play();
 
