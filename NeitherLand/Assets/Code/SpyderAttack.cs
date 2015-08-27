@@ -47,8 +47,11 @@ public class SpyderAttack : MonoBehaviour {
         {
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
             Ray ray = new Ray(rayOrigin.position, rayOrigin.forward);
-            Debug.DrawRay(ray.origin, ray.direction);
+          //  Debug.DrawRay(ray.origin, ray.direction);
             bool raycast = Physics.Raycast(ray, out raycastHit, 100f, shootableMask);
+
+            isAttacking = false;
+            anim.SetBool("AttackPlayer", false);
             if (raycast)
             {
                 if (raycastHit.transform == player.transform && !isAttacking)
@@ -56,11 +59,16 @@ public class SpyderAttack : MonoBehaviour {
                     isAttacking = true;
                     anim.SetBool("AttackPlayer", true);
                 }
+            //    else
+            //    {
+            //        isAttacking = false;
+            //    }
+            //}
+            //else
+            //{
+            //    isAttacking = false;
             }
-            else
-            {
-                isAttacking = false;
-            }
+
         }
 
         if(isCharging)
